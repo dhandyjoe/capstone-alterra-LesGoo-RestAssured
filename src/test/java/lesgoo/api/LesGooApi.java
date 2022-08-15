@@ -18,6 +18,7 @@ public class LesGooApi {
 
     // Login
     public static String LOGIN = URL+"login";
+    public static String REGISTER = URL+"register";
 
     // Group
 
@@ -36,5 +37,12 @@ public class LesGooApi {
     public void logoutUser() {
         SerenityRest.given()
                 .headers("Authorization", BEARER_TOKEN);
+    }
+
+    @Step("Register user")
+    public void registerUser(String json) {
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
     }
 }
