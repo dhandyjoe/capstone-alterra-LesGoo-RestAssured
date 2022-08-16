@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.net.URI;
+import java.nio.channels.SeekableByteChannel;
 
 public class LesGooApi {
 
@@ -32,12 +33,16 @@ public class LesGooApi {
     // Logout
     public static String LOGOUT = URL+"logout";
 
+    //User
+    public static String USERS = URL+"users";
+    public static String USERS1 = URL+"users/1";
+    public static String USER = URL+"user";
+
+    //Chat
+    public static String CHATS = URL+"chats";
+
     //Locations
     public static String LOCATIONS = URL+"locations";
-
-    //Chats
-    public static String CHATS = URL+"chats"
-
 
     @Step("Login user")
     public void loginUser(String json) {
@@ -118,4 +123,39 @@ public class LesGooApi {
                 .contentType(ContentType.JSON)
                 .body(json);
     }
+
+    @Step("Get user detail ")
+    public void getUserDetail(){
+        SerenityRest.given()
+                .headers("Authorization", BEARER_TOKEN);
+    }
+
+    @Step("Edit User")
+    public void editUser(String json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .headers("Authorization", BEARER_TOKEN);
+    }
+
+    @Step("Get Chat")
+    public void getChats(){
+        SerenityRest.given()
+                .headers("Authorization", BEARER_TOKEN);
+    }
+
+    @Step("Get Locations")
+    public void getLocations(){
+        SerenityRest.given()
+                .headers("Authorization", BEARER_TOKEN);
+    }
+
+    @Step("Put update user")
+    public static void putUpdateUser(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .headers("Authorization", BEARER_TOKEN);
+    }
+
 }
