@@ -1,0 +1,11 @@
+{
+  "name": "groupQA",
+  "description": "description QA",
+  "start_dest": "",
+  "final_dest": "bandung",
+  "start_date": "minggu",
+  "end_date": "selasa",
+  "groupimg": "ini file",
+  "longitude": 106.4244,
+  "latitude": -6.34944
+}
