@@ -1,5 +1,6 @@
 package lesgoo.hooks;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.http.ContentType;
 import lesgoo.api.LesGooApi;
@@ -25,5 +26,15 @@ public class LesGooHooks {
                 .body().jsonPath().getString("data.token");
 
         System.out.println("ini token login : " + LesGooApi.ACCESS_TOKEN);
+    }
+
+
+    @After(value = "@logout")
+    public void logout() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + LesGooApi.ACCESS_TOKEN)
+                .when().post(LesGooApi.LOGOUT);
+
+        System.out.println("ini token logout : ");
     }
 }
