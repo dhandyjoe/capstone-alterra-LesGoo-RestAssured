@@ -27,6 +27,8 @@ public class LesGooApi {
 
     //User
     public static String USERS = URL+"users";
+    public static String USERS1 = URL+"users/1";
+    public static String USER = URL+"user";
 
     //Chat
     public static String CHATS = URL+"chats";
@@ -71,6 +73,14 @@ public class LesGooApi {
     @Step("Get Locations")
     public void getLocations(){
         SerenityRest.given()
+                .headers("Authorization", BEARER_TOKEN);
+    }
+
+    @Step("Put update user")
+    public static void putUpdateUser(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
                 .headers("Authorization", BEARER_TOKEN);
     }
 
