@@ -32,6 +32,12 @@ public class LesGooApi {
     // Logout
     public static String LOGOUT = URL+"logout";
 
+    //Locations
+    public static String LOCATIONS = URL+"locations";
+
+    //Chats
+    public static String CHATS = URL+"chats"
+
 
     @Step("Login user")
     public void loginUser(String json) {
@@ -95,6 +101,20 @@ public class LesGooApi {
     public void leaveGroup(String json) {
         SerenityRest.given()
                 .headers("Authorization", BEARER_TOKEN)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Add Locations")
+    public void addLocations(String json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Add Chats")
+    public void addChats(String json){
+        SerenityRest.given()
                 .contentType(ContentType.JSON)
                 .body(json);
     }
