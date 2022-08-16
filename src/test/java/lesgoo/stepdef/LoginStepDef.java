@@ -3,6 +3,7 @@ package lesgoo.stepdef;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.response.Response;
 import lesgoo.api.LesGooApi;
 import lesgoo.response.LesGooResponse;
 import net.serenitybdd.rest.SerenityRest;
@@ -35,7 +36,10 @@ public class LoginStepDef {
 
     @When("Send request login")
     public void sendRequestLogin() {
-        SerenityRest.when().post(LesGooApi.LOGIN);
+        LesGooApi.ACCESS_TOKEN = SerenityRest.when().post(LesGooApi.LOGIN)
+                .body().jsonPath().getString("data.token");
+
+        System.out.println("ini token login : " + LesGooApi.ACCESS_TOKEN);
     }
 
     @Then("Status code should be {int}")
