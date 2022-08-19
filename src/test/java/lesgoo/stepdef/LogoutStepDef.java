@@ -6,8 +6,6 @@ import lesgoo.api.LesGooApi;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
-import java.io.File;
-
 public class LogoutStepDef {
 
     @Steps
@@ -21,6 +19,5 @@ public class LogoutStepDef {
     @When("Send request logout")
     public void sendRequestLogout() {
         SerenityRest.when().post(LesGooApi.LOGOUT);
-        System.out.println("ini token logout : " + LesGooApi.ACCESS_TOKEN);
     }
 }

@@ -3,7 +3,6 @@ package lesgoo.stepdef;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.response.Response;
 import lesgoo.api.LesGooApi;
 import lesgoo.response.LesGooResponse;
 import net.serenitybdd.rest.SerenityRest;
@@ -11,10 +10,6 @@ import net.thucydides.core.annotations.Steps;
 import org.json.JSONObject;
 
 import static org.hamcrest.Matchers.equalTo;
-
-
-import java.io.File;
-
 
 public class LoginStepDef {
 

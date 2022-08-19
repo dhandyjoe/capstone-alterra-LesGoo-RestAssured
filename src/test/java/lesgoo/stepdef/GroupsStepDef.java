@@ -1,13 +1,16 @@
 package lesgoo.stepdef;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import lesgoo.api.LesGooApi;
+import lesgoo.constants.Constants;
+import lesgoo.response.LesGooResponse;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import org.json.JSONObject;
-
 import java.io.File;
+import static org.hamcrest.Matchers.equalTo;
 
 public class GroupsStepDef {
 
@@ -16,7 +19,7 @@ public class GroupsStepDef {
 
     @Given("Create a new group with valid req body")
     public void createANewGroupWithValidReqBody() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsValidData.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ +"/groups/CreateGroupsValidData.json");
         lesGooApi.createGroup(jsonFile);
     }
 
@@ -27,61 +30,61 @@ public class GroupsStepDef {
 
     @Given("Create a new group with invalid name")
     public void createANewGroupWithInvalidName() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidName.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidName.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid description")
     public void createANewGroupWithInvalidDescription() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidDescription.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidDescription.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid start_dest")
     public void createANewGroupWithInvalidStart_dest() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidStartDest.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidStartDest.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("create a new group with invalid final_dest")
     public void createANewGroupWithInvalidFinal_dest() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidFinalDest.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidFinalDest.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid start_date")
     public void createANewGroupWithInvalidStart_date() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidStartDate.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidStartDate.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid end_date")
     public void createANewGroupWithInvalidEnd_date() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidEndDate.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidEndDate.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid groupimg")
     public void createANewGroupWithInvalidGroupimg() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidGroupImg.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidGroupImg.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid latitude")
     public void createANewGroupWithInvalidLatitude() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidLatitude.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidLatitude.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with invalid longitude")
     public void createANewGroupWithInvalidLongitude() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsInvalidLongitude.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidLongitude.json");
         lesGooApi.createGroup(jsonFile);
     }
 
     @Given("Create a new group with no body req")
     public void createANewGroupWithNoBodyReq() {
-        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/groups/CreateGroupsNoBodyReq.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsNoBodyReq.json");
         lesGooApi.createGroup(jsonFile);
     }
 
@@ -142,10 +145,10 @@ public class GroupsStepDef {
         lesGooApi.deleteGroup(id);
     }
 
-    @Given("Get all chat + participant location with valid group_id")
+    @Given("Get all chat + participant location with valid groupId")
     public void getAllChatParticipantLocationWithValidGroup_id() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("group_id", "qwfgiarig");
+        jsonObject.put("group_id", "a38a98ca-4552-49cd-93a4-c1637c809d10");
         String getChatAndLocation = jsonObject.toString();
 
         lesGooApi.getChatAndLocation(getChatAndLocation);
@@ -159,7 +162,7 @@ public class GroupsStepDef {
     @Given("Leave group")
     public void leaveGroup() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("group_id", "qwfgiarig");
+        jsonObject.put("group_id", "a38a98ca-4552-49cd-93a4-c1637c809d10");
         String leaveGroup = jsonObject.toString();
 
         lesGooApi.leaveGroup(leaveGroup);
@@ -168,5 +171,28 @@ public class GroupsStepDef {
     @When("Send request leave group")
     public void sendRequestLeaveGroup() {
         SerenityRest.when().post(LesGooApi.LEAVE_GROUP);
+    }
+
+    @And("Response body should contain group name {string}")
+    public void responseBodyShouldContainGroupName(String groupName) {
+        SerenityRest.then().body(LesGooResponse.GROUP_NAME, equalTo(groupName));
+    }
+
+    @Given("Get all chat + participant location with invalid groupId")
+    public void getAllChatParticipantLocationWithInvalidGroupId() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("group_id", "qwfgiarig");
+        String getChatAndLocation = jsonObject.toString();
+
+        lesGooApi.getChatAndLocation(getChatAndLocation);
+    }
+
+    @Given("Leave group with invalid groupId")
+    public void leaveGroupWithInvalidGroupId() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("group_id", "a38a98ca-4552-49cd-93a4-c1637c809d10");
+        String leaveGroup = jsonObject.toString();
+
+        lesGooApi.leaveGroup(leaveGroup);
     }
 }
