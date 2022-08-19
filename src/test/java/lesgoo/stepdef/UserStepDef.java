@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lesgoo.api.LesGooApi;
+import lesgoo.constants.Constants;
 import lesgoo.response.LesGooResponse;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
@@ -14,6 +15,7 @@ import java.io.File;
 
 import static org.hamcrest.Matchers.equalTo;
 public class UserStepDef {
+
     @Steps
     LesGooApi lesGooApi;
 
@@ -22,37 +24,29 @@ public class UserStepDef {
         lesGooApi.getUserDetail();
     }
 
-    @When("Send request user Details")
-    public void SendRequestUserDetails(){
+    @When("Send request user details")
+    public void sendRequestUserDetails(){
       SerenityRest.when().get(LesGooApi.USERS);
     }
 
-    @When("Send request invalid user Details")
-    public void SendRequestInvaildUserDetails(){
-        SerenityRest.when().get(LesGooApi.USERS1);
-    }
-
-    @When("Send request not valid user Details")
-    public void SendRequestNotVaildUserDetails(){
-        SerenityRest.when().get(LesGooApi.USER);
-    }
     @Given("Put update user with valid json file")
     public void putUpdateUserWithIdAndWithValidJsonFile() {
-        File jsonFiles = new File(LesGooApi.DIR+"/src/test/resources/Json/UpdateUser.json");
+        File jsonFiles = new File(Constants.JSON_BODY_REQ+"/users/updateuser.json");
         LesGooApi.putUpdateUser(jsonFiles);
     }
 
-    @When("Send request user Delete")
-    public void SendRequestUserDelete(){
+    @When("Send request user delete")
+    public void sendRequestUserDelete(){
         SerenityRest.when().delete(LesGooApi.USERS);
     }
 
-    @When("Send request invalid user Delete")
-    public void SendRequestInvalidUserDelete(){
-        SerenityRest.when().delete(LesGooApi.USERS1);
+    @Given("Get user details without authorization")
+    public void getUserDetailsWithInvalidBearerToken() {
+        lesGooApi.getUserDetailWithoutAuthorization();
     }
-    @When("Send request not valid user Delete")
-    public void SendRequestNotValidUserDelete(){
-        SerenityRest.when().delete(LesGooApi.USER);
+
+    @Given("Delete users")
+    public void deleteUsers() {
+        lesGooApi.deleteUser();
     }
 }

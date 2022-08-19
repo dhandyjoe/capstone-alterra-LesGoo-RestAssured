@@ -70,7 +70,8 @@ Feature: Groups functionality
     Given Get detail group with valid id "1"
     When Send request get detail group
     Then Status code should be 200
-    And Response body should contain message "Trip Rinjani"
+    And Response body should contain message "Success"
+    And Response body should contain group name "Trip Rinjani"
 
   Scenario: Get detail group with invalid id
     Given Get detail group with invalid id "qweqwe"
@@ -91,7 +92,7 @@ Feature: Groups functionality
     And Response body should contain message "Invalid Param"
 
   Scenario: Delete group with valid id
-    Given Delete group with valid id "1"
+    Given Delete group with valid id "a38a98ca-4552-49cd-93a4-c1637c809d10"
     When Send request delete group
     Then Status code should be 200
     And Response body should contain message "Success Operation"
@@ -102,14 +103,26 @@ Feature: Groups functionality
     Then Status code should be 400
     And Response body should contain message "Invalid Id"
 
-  Scenario: Get all chat + participant location with valid group_id
-    Given Get all chat + participant location with valid group_id
+  Scenario: Get all chat + participant location with valid groupId
+    Given Get all chat + participant location with valid groupId
+    When Send request get chats
+    Then Status code should be 200
+    And Response body should contain message "Success get data group chat"
+
+  Scenario: Get all chat + participant location with valid groupId
+    Given Get all chat + participant location with invalid groupId
     When Send request get chats
     Then Status code should be 200
     And Response body should contain message "Success get data group chat"
 
   Scenario: Leave group
     Given Leave group
+    When Send request leave group
+    Then Status code should be 200
+    And Response body should contain message "ok"
+
+  Scenario: Leave group with invalid groupId
+    Given Leave group with invalid groupId
     When Send request leave group
     Then Status code should be 200
     And Response body should contain message "ok"

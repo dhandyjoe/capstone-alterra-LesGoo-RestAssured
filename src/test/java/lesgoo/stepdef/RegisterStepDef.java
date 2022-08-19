@@ -9,9 +9,6 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import org.json.JSONObject;
 
-import static org.hamcrest.Matchers.equalTo;
-
-
 public class RegisterStepDef {
 
     @Steps
@@ -19,7 +16,7 @@ public class RegisterStepDef {
 
     @When("register with username {string} and email {string} phone {string} and password {string}")
     public void getListUserWithParameter(String username, String email, String phone, String password) {
-//        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/register/RegisterWithValidData.json");
+//        File jsonFile = new File(Constants.JSON_BODY_REQ+register/RegisterWithValidData.json");
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("username", username);
@@ -36,6 +33,4 @@ public class RegisterStepDef {
     public void sendRequestRegister() {
         SerenityRest.when().post(LesGooApi.REGISTER);
     }
-
-
 }
