@@ -1,3 +1,4 @@
+@access
 Feature: Add Chats
 
   Scenario: Add Chats

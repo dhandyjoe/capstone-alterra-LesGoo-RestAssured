@@ -1,10 +1,5 @@
+@access
 Feature: Users
-
-  Background: Successfully login
-    Given login with username "testingqa" and password "qwerty"
-    When Send request login
-    Then Status code should be 200
-    And Response body should contain message "success login"
 
   Scenario: Get users details
     Given Get user details

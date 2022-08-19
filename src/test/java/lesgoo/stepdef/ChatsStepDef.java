@@ -15,7 +15,7 @@ public class ChatsStepDef {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("grub_id", grub_id);
         jsonObject.put("Message", message);
-        jsonObject.put("isSOS", isSOS);
+        jsonObject.put("isSOS", Boolean.parseBoolean(isSOS));
         String chats = jsonObject.toString();
 
         lesGooApi.addChats(chats);
@@ -31,7 +31,7 @@ public class ChatsStepDef {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("grub_id", grub_id);
         jsonObject.put("Message", message);
-        jsonObject.put("isSOS", isSOS);
+        jsonObject.put("isSOS", Boolean.parseBoolean(isSOS));
         String chats = jsonObject.toString();
 
         lesGooApi.addChatsWithoutAuthorization(chats);

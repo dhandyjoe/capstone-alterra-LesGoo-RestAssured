@@ -1,4 +1,3 @@
-@login @logout
 Feature: Logout functionality
 
   Scenario: register with valid data
