@@ -1,3 +1,4 @@
+@access
 Feature: Groups functionality
 
   Scenario: Create a new group with valid req body
