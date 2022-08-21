@@ -1,21 +1,50 @@
 <div align="center">
   <a href="https://github.com/ALTA-Bringeee-Group1/Bringeee-API">
-    <img src="images/logo.png" width="365" height="70">
+    <img src="images/lesgoo.png" width="300" height="95">
   </a>
 
-  <h3 align="center">Bringeee</h3>
-
   <p align="center">
-    Final Project Capstone Program Immersive Alterra Academy
+    Capstone Program Immersive Alterra Academy
     <br />
-    <a href="https://app.swaggerhub.com/apis-docs/wildanie12/Bringee-API/v1.2#/"><strong>Explore the docs Open API »</strong></a>
+    <a href="https://app.swaggerhub.com/apis-docs/faqihassyfa/LesGoo/1.0.0"><strong>| Go to Open API documentation |</strong></a>
     <br />
     <br />
-    <a href="https://www.codacy.com/gh/ALTA-Bringeee-Group1/Bringeee-API/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ALTA-Bringeee-Group1/Bringeee-API&amp;utm_campaign=Badge_Grade">
-      <img src="https://app.codacy.com/project/badge/Grade/3f9da093203f45a4b020bcedcb91196c">
-    </a>
-    <a href="https://www.codacy.com/gh/ALTA-Bringeee-Group1/Bringeee-API/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ALTA-Bringeee-Group1/Bringeee-API&utm_campaign=Badge_Coverage">
-      <img src="https://app.codacy.com/project/badge/Coverage/3f9da093203f45a4b020bcedcb91196c">
-    </a>
   </p>
 </div>
+
+
+### 🛠 &nbsp;Tools
+**Manual:**  
+![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+**Automation:**  
+![IntellijIDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
+![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)
+![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
+
+**Framework for automation:**  
+![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+- [Rest Assured](https://rest-assured.io/)
+- [Serenity BDD](https://serenity-bdd.info/)
+- [Cucumber](https://cucumber.io/)
+
+**Documentation Tools:** 
+- [Google spreadsheet](https://www.google.com/sheets/about/)
+
+**Collaboration:**
+![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)
+
+
+### 📱 Contact
+- Dhandy Joenathan Kurnia Putra
+  [![LinkedIn](https://img.shields.io/badge/alfinfernandha-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dhandyjoenathan/)
+  [![GitHub](https://img.shields.io/badge/alfin7007-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/dhandyjoe)
+
+<h5>
+<p align="right">:copyright: 2022 | Built with :heart: from us</p>
+</h5>
