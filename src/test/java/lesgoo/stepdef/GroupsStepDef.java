@@ -19,8 +19,7 @@ public class GroupsStepDef {
 
     @Given("Create a new group with valid req body")
     public void createANewGroupWithValidReqBody() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ +"/groups/CreateGroupsValidData.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithValidData();
     }
 
     @When("Send request create group")
@@ -30,62 +29,52 @@ public class GroupsStepDef {
 
     @Given("Create a new group with invalid name")
     public void createANewGroupWithInvalidName() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidName.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidName();
     }
 
     @Given("Create a new group with invalid description")
     public void createANewGroupWithInvalidDescription() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidDescription.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidDescription();
     }
 
     @Given("Create a new group with invalid start_dest")
     public void createANewGroupWithInvalidStart_dest() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidStartDest.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidStartDest();
     }
 
     @Given("create a new group with invalid final_dest")
     public void createANewGroupWithInvalidFinal_dest() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidFinalDest.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidFinalDest();
     }
 
     @Given("Create a new group with invalid start_date")
     public void createANewGroupWithInvalidStart_date() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidStartDate.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidStartDate();
     }
 
     @Given("Create a new group with invalid end_date")
     public void createANewGroupWithInvalidEnd_date() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidEndDate.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidEndDate();
     }
 
     @Given("Create a new group with invalid groupimg")
     public void createANewGroupWithInvalidGroupimg() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidGroupImg.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidGroupImage();
     }
 
     @Given("Create a new group with invalid latitude")
     public void createANewGroupWithInvalidLatitude() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidLatitude.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidLatitude();
     }
 
     @Given("Create a new group with invalid longitude")
     public void createANewGroupWithInvalidLongitude() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsInvalidLongitude.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithInvalidLongitude();
     }
 
     @Given("Create a new group with no body req")
     public void createANewGroupWithNoBodyReq() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ+"/groups/CreateGroupsNoBodyReq.json");
-        lesGooApi.createGroup(jsonFile);
+        lesGooApi.createGroupWithNoBodyRequest();
     }
 
     @Given("Get detail group with valid id {string}")
@@ -145,10 +134,10 @@ public class GroupsStepDef {
         lesGooApi.deleteGroup(id);
     }
 
-    @Given("Get all chat + participant location with valid groupId")
-    public void getAllChatParticipantLocationWithValidGroup_id() {
+    @Given("Get all chat + participant location with valid groupId {string}")
+    public void getAllChatParticipantLocationWithValidGroup_id(String groupId) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("group_id", "a38a98ca-4552-49cd-93a4-c1637c809d10");
+        jsonObject.put("group_id", groupId);
         String getChatAndLocation = jsonObject.toString();
 
         lesGooApi.getChatAndLocation(getChatAndLocation);
