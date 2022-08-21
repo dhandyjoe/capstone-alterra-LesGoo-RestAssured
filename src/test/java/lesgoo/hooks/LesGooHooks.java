@@ -12,7 +12,7 @@ public class LesGooHooks {
     @Before(value = "@access")
     public void login() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("username", "testingqa");
+        jsonObject.put("username", "hiruka");
         jsonObject.put("password", "qwerty");
         jsonObject.put("fcm_token", "fcmtoken");
         String login = jsonObject.toString();
@@ -24,7 +24,7 @@ public class LesGooHooks {
                 .post(LesGooApi.LOGIN)
                 .body().jsonPath().getString("data.token");
 
-        System.out.println("ini token login : " + LesGooApi.ACCESS_TOKEN);
+        System.out.println("Berhasil login");
     }
 
     @After(value = "@access")
@@ -33,13 +33,13 @@ public class LesGooHooks {
                 .headers("Authorization", "Bearer " + LesGooApi.ACCESS_TOKEN)
                 .when().post(LesGooApi.LOGOUT);
 
-        System.out.println("logout");
+        System.out.println("Berhasil logout");
     }
 
-    @Before(value = "@login")
+    @Before(value = "@loginDefault")
     public void loginForLogoutAPI() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("username", "testingqa");
+        jsonObject.put("username", "hiruka");
         jsonObject.put("password", "qwerty");
         jsonObject.put("fcm_token", "fcmtoken");
         String login = jsonObject.toString();
@@ -54,7 +54,7 @@ public class LesGooHooks {
         System.out.println("ini token login : " + LesGooApi.ACCESS_TOKEN);
     }
 
-    @After(value = "@logout")
+    @After(value = "@logoutDefault")
     public void logoutForLoginAPI() {
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + LesGooApi.ACCESS_TOKEN)

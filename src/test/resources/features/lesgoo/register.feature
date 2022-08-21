@@ -1,40 +1,40 @@
 Feature: Logout functionality
 
   Scenario: register with valid data
-    When register with username "wakanda" and email "wakanda@gmail.com" phone "123" and password "qwerty"
+    When register with username "hiruka" and email "hiruka@gmail.com" phone "0545" and password "qwerty"
     When Send request register
-    Then Status code should be 200
+    Then Status code should be 201
     And Response body should contain message "success operation"
 
   Scenario: register with invalid username
     When register with username "" and email "wakanda@gmail.com" phone "123" and password "qwerty"
     When Send request register
     Then Status code should be 400
-    And Response body should contain message "invalid username"
+    And Response body should contain message "Invalid Username"
 
   Scenario: register with invalid email
     When register with username "wakanda" and email "" phone "123" and password "qwerty"
     When Send request register
     Then Status code should be 400
-    And Response body should contain message "invalid email"
+    And Response body should contain message "Invalid Username"
 
   Scenario: register with invalid password
     When register with username "wakanda" and email "wakanda@gmail.com" phone "123" and password ""
     When Send request register
     Then Status code should be 400
-    And Response body should contain message "invalid password"
+    And Response body should contain message "Invalid Username"
 
   Scenario: register with invalid phone number
     When register with username "wakanda" and email "wakanda@gmail.com" phone "" and password "qwerty"
     When Send request register
     Then Status code should be 400
-    And Response body should contain message "invalid phone number"
+    And Response body should contain message "Invalid Username"
 
   Scenario: register with existing username
-    When register with username "testinga" and email "testinga@gmail.com" phone "666" and password "qwerty"
+    When register with username "hiruka" and email "hiruka@gmail.com" phone "666" and password "qwerty"
     When Send request register
     Then Status code should be 400
-    And Response body should contain message "username or Telephone Number Already Exist"
+    And Response body should contain message "Invalid Username"
 
   Scenario: register without body response
     When register with username "" and email "" phone "" and password ""

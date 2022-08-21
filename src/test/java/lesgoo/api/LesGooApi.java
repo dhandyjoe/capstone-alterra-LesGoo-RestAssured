@@ -49,6 +49,11 @@ public class LesGooApi {
                 .headers("Authorization", "Bearer " + ACCESS_TOKEN);
     }
 
+    @Step("Logout user without authorization")
+    public void logoutUserWithoutAuthorization() {
+        SerenityRest.given();
+    }
+
     @Step("Register user")
     public void registerUser(String json) {
         SerenityRest.given()
@@ -60,8 +65,16 @@ public class LesGooApi {
     public void createGroup(File json) {
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + ACCESS_TOKEN)
-                .contentType(ContentType.JSON)
-                .body(json);
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
     }
 
     @Step("Detail group")
@@ -144,7 +157,7 @@ public class LesGooApi {
     }
 
     @Step("Put update user")
-    public static void putUpdateUser(File json){
+    public static void putUpdateUser(String json){
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + ACCESS_TOKEN)
                 .contentType(ContentType.JSON)

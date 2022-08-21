@@ -16,14 +16,12 @@ public class LoginStepDef {
     @Steps
     LesGooApi lesGooApi;
 
-    @When("login with username {string} and password {string}")
-    public void getListUserWithParameter(String username, String password) {
-//        File jsonFile = new File(LesGooApi.DIR+"/src/test/resources/json/requestbody/login/LoginWithValidData.json");
-
+    @When("login with username {string}, password {string}, fcm_token {string}")
+    public void getListUserWithParameter(String username, String password, String fcmtoken) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("username", username);
         jsonObject.put("password", password);
-        jsonObject.put("fcm_token", "fcmtoken");
+        jsonObject.put("fcm_token", fcmtoken);
         String login = jsonObject.toString();
 
         lesGooApi.loginUser(login);
@@ -33,8 +31,6 @@ public class LoginStepDef {
     public void sendRequestLogin() {
         LesGooApi.ACCESS_TOKEN = SerenityRest.when().post(LesGooApi.LOGIN)
                 .body().jsonPath().getString("data.token");
-
-        System.out.println("ini token login : " + LesGooApi.ACCESS_TOKEN);
     }
 
     @Then("Status code should be {int}")

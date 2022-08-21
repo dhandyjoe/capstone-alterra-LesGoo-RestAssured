@@ -29,10 +29,17 @@ public class UserStepDef {
       SerenityRest.when().get(LesGooApi.USERS);
     }
 
-    @Given("Put update user with valid json file")
-    public void putUpdateUserWithIdAndWithValidJsonFile() {
-        File jsonFiles = new File(Constants.JSON_BODY_REQ+"/users/updateuser.json");
-        LesGooApi.putUpdateUser(jsonFiles);
+    @Given("Put update user with username {string}, email {string}, phone {string}")
+    public void putUpdateUserWithIdAndWithValidJsonFile(String username, String email, String phone) {
+//        File jsonFiles = new File(Constants.JSON_BODY_REQ+"/users/updateuser.json");
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("username", username);
+        jsonObject.put("email", email);
+        jsonObject.put("phone", phone);
+        String login = jsonObject.toString();
+
+        LesGooApi.putUpdateUser(login);
     }
 
     @When("Send request user delete")
@@ -48,5 +55,16 @@ public class UserStepDef {
     @Given("Delete users")
     public void deleteUsers() {
         lesGooApi.deleteUser();
+    }
+
+    @And("Username response should be {string} and email should be {string}")
+    public void usernameResponseShouldBeAndEmailShouldBe(String username, String email) {
+        SerenityRest.then().body(LesGooResponse.USERNAME, equalTo(username))
+                .body(LesGooResponse.EMAIL, equalTo(email));
+    }
+
+    @When("Send request user update")
+    public void sendRequestUserUpdate() {
+        SerenityRest.when().put(LesGooApi.USERS);
     }
 }

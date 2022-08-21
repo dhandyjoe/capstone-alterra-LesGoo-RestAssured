@@ -1,5 +1,6 @@
 package lesgoo.stepdef;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.ht.Le;
 import lesgoo.api.LesGooApi;
@@ -19,5 +20,10 @@ public class LogoutStepDef {
     @When("Send request logout")
     public void sendRequestLogout() {
         SerenityRest.when().post(LesGooApi.LOGOUT);
+    }
+
+    @Given("Logout without bearer token")
+    public void logoutWithoutBearerToken() {
+        lesGooApi.logoutUserWithoutAuthorization();
     }
 }

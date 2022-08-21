@@ -19,7 +19,7 @@ public class GroupsStepDef {
 
     @Given("Create a new group with valid req body")
     public void createANewGroupWithValidReqBody() {
-        File jsonFile = new File(Constants.JSON_BODY_REQ +"/groups/CreateGroupsValidData.json");
+        File jsonFile = new File(Constants.JSON_BODY_REQ +"/groups/CreateGroupsValidData.txt");
         lesGooApi.createGroup(jsonFile);
     }
 
@@ -145,10 +145,10 @@ public class GroupsStepDef {
         lesGooApi.deleteGroup(id);
     }
 
-    @Given("Get all chat + participant location with valid groupId")
-    public void getAllChatParticipantLocationWithValidGroup_id() {
+    @Given("Get all chat + participant location with valid groupId {string}")
+    public void getAllChatParticipantLocationWithValidGroup_id(String groupId) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("group_id", "a38a98ca-4552-49cd-93a4-c1637c809d10");
+        jsonObject.put("group_id", groupId);
         String getChatAndLocation = jsonObject.toString();
 
         lesGooApi.getChatAndLocation(getChatAndLocation);

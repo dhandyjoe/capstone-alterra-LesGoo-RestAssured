@@ -1,0 +1,9 @@
+name:group_p2
+description:ini description p2
+start_dest:jakarta
+final_dest:bandung
+start_date:minggu
+end_date:selasa
+groupimg:
+longitude:106.4244
+latitude:-6.34944
