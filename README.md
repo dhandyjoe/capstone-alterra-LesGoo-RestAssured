@@ -34,16 +34,15 @@
 **Documentation Tools:** 
 - [Google spreadsheet](https://www.google.com/sheets/about/)
 
-**Collaboration:**
+**Collaboration:**  
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 
 ### 📱 Contact
-- Dhandy Joenathan Kurnia Putra
-  [![LinkedIn](https://img.shields.io/badge/alfinfernandha-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dhandyjoenathan/)
-  [![GitHub](https://img.shields.io/badge/alfin7007-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/dhandyjoe)
+  [![LinkedIn](https://img.shields.io/badge/-Dhandy-white?style=for-the-badge&logo=linkedin&logoColor=blue)](https://www.linkedin.com/in/dhandyjoenathan/)
+  [![GitHub](https://img.shields.io/badge/-Dhandy-white?style=for-the-badge&logo=github&logoColor=black)]([https://github.com/dhandyjoe)
 
 <h5>
 <p align="right">:copyright: 2022 | Built with :heart: from us</p>
