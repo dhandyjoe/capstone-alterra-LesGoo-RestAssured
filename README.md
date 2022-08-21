@@ -27,12 +27,12 @@
 
 **Framework for automation:**  
 ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-- [Rest Assured](https://rest-assured.io/)
-- [Serenity BDD](https://serenity-bdd.info/)
-- [Cucumber](https://cucumber.io/)
+![Rest Assured](https://img.shields.io/badge/-rest%20assured-000000?style=for-the-badge&logoColor=black)
+![Serenity BDD](https://img.shields.io/badge/-serenit%20ybdd-16a67a?style=for-the-badge&logoColor=black)
+![Cucumber](https://img.shields.io/badge/-cucumber-4bc47b?style=for-the-badge&logoColor=black)
 
-**Documentation Tools:** 
-- [Google spreadsheet](https://www.google.com/sheets/about/)
+**Documentation Tools:**  
+![Google Spreadsheets](https://img.shields.io/badge/-Google%20Spreadsheets-4bc47b?style=for-the-badge&logoColor=black)
 
 **Collaboration:**  
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
