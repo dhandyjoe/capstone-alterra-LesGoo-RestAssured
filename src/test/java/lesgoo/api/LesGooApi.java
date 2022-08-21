@@ -62,7 +62,167 @@ public class LesGooApi {
     }
 
     @Step("Create group")
-    public void createGroup(File json) {
+    public void createGroupWithValidData() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "testing qa group")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidName() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidDescription() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidStartDest() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidFinalDest() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidStartDate() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidEndDate() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidGroupImage() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File(""))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidLatitude() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "106.22")
+                .multiPart("latitude", "");
+    }
+
+    @Step("Create group")
+    public void createGroupWithInvalidLongitude() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + ACCESS_TOKEN)
+                .contentType("multipart/form-data")
+                .multiPart("name", "qagroup")
+                .multiPart("description", "ini deskripsi")
+                .multiPart("start_dest", "Salatiga")
+                .multiPart("final_dest", "Semarang")
+                .multiPart("start_date", "Jumat")
+                .multiPart("end_date", "Minggu")
+                .multiPart("groupimg", new File("/home/dhandyjoe/Pictures/background/coding2.jpg"))
+                .multiPart("longitude", "")
+                .multiPart("latitude", "60.33");
+    }
+
+    @Step("Create group")
+    public void createGroupWithNoBodyRequest() {
         SerenityRest.given()
                 .headers("Authorization", "Bearer " + ACCESS_TOKEN)
                 .contentType("multipart/form-data")

@@ -68,6 +68,8 @@ Feature: Groups functionality
     Then Status code should be 400
     And Response body should contain message "Bad Request"
 
+
+    @accountHasGroup
   Scenario: Create a new group with an account that already has a group
     Given Create a new group with valid req body
     When Send request create group
