@@ -5,11 +5,11 @@ Feature: Locations
     When add locations with groupId "<groupId>" and latitude <latitude> and longitude <longitude>
     When send request add locations
     Then Status code should be 200
-    And Response body should contain message "ok"
+    And Response body should contain message "success update location"
     Examples:
       | groupId                                | latitude       | longitude     |
-      | a38a98ca-4552-49cd-93a4-c1637c809d10   | 1.6323423      | -98.71357612  |
-      | a38a98ca-4552-49cd-93a4-c1637c809d10   | 106.333        | 50.22         |
+      | c5e710db-8c4a-48a7-88e0-1ffdd74dd9f1   | 1.6323423      | -98.71357612  |
+      | c5e710db-8c4a-48a7-88e0-1ffdd74dd9f1   | 106.333        | 50.22         |
 
   Scenario: Add valid Location without authorization
     When add locations with groupId "qweqwe" and latitude 1.6323423 and longitude -98.71357612 wihtout authorization

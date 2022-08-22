@@ -13,8 +13,8 @@ public class ChatsStepDef {
     @When("add chats with groupId {string} and message {string} and isSOS {string}")
     public void addChatsWithGroup_idAndMessageAndIsSOS(String grub_id, String message, String isSOS) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("grub_id", grub_id);
-        jsonObject.put("Message", message);
+        jsonObject.put("group_id", grub_id);
+        jsonObject.put("message", message);
         jsonObject.put("isSOS", Boolean.parseBoolean(isSOS));
         String chats = jsonObject.toString();
 
@@ -29,8 +29,8 @@ public class ChatsStepDef {
     @When("add chats with groupId {string} and message {string} and isSOS {string} without authorization")
     public void addChatsWithGroupIdAndMessageAndIsSOSWithoutAuthorization(String grub_id, String message, String isSOS) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("grub_id", grub_id);
-        jsonObject.put("Message", message);
+        jsonObject.put("group_id", grub_id);
+        jsonObject.put("message", message);
         jsonObject.put("isSOS", Boolean.parseBoolean(isSOS));
         String chats = jsonObject.toString();
 
