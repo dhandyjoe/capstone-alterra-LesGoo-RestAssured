@@ -12,7 +12,7 @@ public class LesGooHooks {
     @Before(value = "@access")
     public void login() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("username", "hiruka");
+        jsonObject.put("username", "jenny2");
         jsonObject.put("password", "qwerty");
         jsonObject.put("fcm_token", "fcmtoken");
         String login = jsonObject.toString();
@@ -39,7 +39,7 @@ public class LesGooHooks {
     @Before(value = "@loginDefault")
     public void loginForLogoutAPI() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("username", "hiruka");
+        jsonObject.put("username", "jenny2");
         jsonObject.put("password", "qwerty");
         jsonObject.put("fcm_token", "fcmtoken");
         String login = jsonObject.toString();

@@ -14,9 +14,9 @@ public class LocationsStepDef {
     @When("add locations with groupId {string} and latitude {double} and longitude {double}")
     public void addLocationsWithGrubidAndLatitudeAndLongitude(String groupId, double latitude, double longitude) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("grub ID", groupId);
-        jsonObject.put("Latitude", latitude);
-        jsonObject.put("Longitude", longitude);
+        jsonObject.put("group_id", groupId);
+        jsonObject.put("latitude", latitude);
+        jsonObject.put("longitude", longitude);
         String locations = jsonObject.toString();
 
         lesGooApi.addLocations(locations);
